@@ -1,0 +1,202 @@
+# Project Submission Template
+
+Create a new file inside the `submissions/` folder using this naming format:
+
+```txt
+slack-bot_charan-goud-kasula.md
+```
+
+Example:
+
+```txt
+ai-sales-copilot_shlok-srivastava.md
+```
+
+Copy the template below into your new file and fill in the details.
+
+---
+
+# Project Name
+
+Write your project name here.
+
+---
+
+## Attendee Details
+
+**Name:** Charan Goud Kasula
+**GitHub Username:** charangoud2004
+**LinkedIn Profile:** https://www.linkedin.com/in/charangoud2004/
+**GitHub Project Repository:** https://github.com/charangoud2004/slack-native-bot
+
+---
+
+## Problem Statement Selected
+
+Mention the title of the problem statement you selected.
+
+Choose one:
+
+```txt
+HR Cost Intelligence Engine
+```
+
+or
+
+```txt
+Intelligent Slack Knowledge Base
+```
+Intelligent Slack Knowledge Base
+---
+
+## Project Description
+
+Briefly explain what your project does.
+
+Try to answer:
+
+* What is the project about?
+* Who is it for?
+* What problem does it solve?
+* How does it help the user?
+
+Write your answer here.
+
+The **Slack Knowledge Base Bot** is an AI-powered knowledge management assistant that lives inside Slack. Teams can upload documents (PDFs, DOCX, URLs, Slack threads), ask natural-language questions, and get grounded, source-cited answers — all without leaving their workspace. It is built for teams and organizations that need quick access to internal knowledge like HR policies, engineering docs, and onboarding guides. It solves the problem of information silos — important knowledge scattered across docs, wikis, and old Slack threads — by centralizing everything into a searchable, conversational knowledge base.
+
+---
+
+## Approach
+
+Explain how you approached the problem.
+
+You can include:
+
+* How you understood the problem
+* What user flow you designed
+* What features you decided to build
+* How AI is used in your solution
+* What makes your approach useful or different
+
+Write your answer here.
+
+I identified that teams waste significant time searching for information buried in documents and Slack threads. The solution brings AI-powered search directly into Slack — the tool teams already use daily. The user flow is: upload documents → documents are automatically chunked, embedded, and auto-tagged → users ask questions via slash commands, @mentions, or DMs → the bot retrieves relevant chunks via vector similarity search → an LLM generates a grounded answer with source citations and confidence scores. AI is used at three levels: (1) HuggingFace local embeddings for semantic vector search, (2) Groq-hosted Llama 3.3 70B for answer generation strictly constrained to retrieved context, and (3) LLM-based auto-tagging to classify documents on upload. What makes this approach different is the two-level out-of-scope detection (retrieval distance + LLM check), scoped access control (personal/team/org), and multi-turn conversation memory — all within a native Slack experience with zero hallucination.
+---
+
+## Tech Stack and Tools Used
+
+Mention the tools, technologies, frameworks, and platforms you used.
+
+Example:
+
+**Frontend:** React, Next.js, HTML, CSS, Tailwind, Material UI
+**Backend:** Node.js, Express, FastAPI, Django, Flask
+**Database:** MongoDB, PostgreSQL, Firebase, Supabase
+**AI Tools/API:** OpenAI, Gemini, Claude, LangChain, Hugging Face, local LLMs
+**Cloud/Deployment:** Vercel, Netlify, Render, Railway, AWS, GCP
+**Other Tools:** Cursor, GitHub Copilot, Figma, Postman, Docker
+
+Fill your details below:
+
+**Frontend:** Slack (Block Kit UI for rich formatted responses)
+**Backend:** Python, Slack Bolt, LangChain
+**Database:** ChromaDB (persistent local vector store)
+**AI Tools/API:** Groq (Llama 3.3 70B), HuggingFace Embeddings (all-MiniLM-L6-v2), LangChain
+**Cloud/Deployment:** Local (Socket Mode — no public server required)
+**Other Tools:** BeautifulSoup4, PyPDF, python-docx, Sentence Transformers
+
+---
+
+## Key Features
+
+List the key features of your project.
+
+Example:
+
+1. Feature one
+2. Feature two
+3. Feature three
+
+Write your features here:
+
+1. **Document Ingestion** — Upload PDFs, DOCX files, URLs, plain text, and Slack threads directly into the knowledge base
+2. **Natural Language Q&A with Citations** — Ask free-text questions and get grounded answers with source attribution and confidence scores
+3. **Document Summarization** — Summarize any URL, ingested document, or Slack thread on demand
+4. **Scoped Knowledge Layers** — Personal, team, and org-wide knowledge bases with automatic access control
+5. **Multi-turn Conversation Memory** — Follow-up questions like "tell me more" work naturally with context retention
+6. **Auto-tagging & Browsing** — Documents are auto-classified into categories (Engineering, HR, Finance, etc.) and browsable via `/browse`
+7. **Out-of-scope Detection** — Two-level detection ensures the bot never hallucates and clearly says when an answer isn't available
+
+---
+
+## What is Working?
+
+Mention what is currently working in your project.
+
+This is important even if your project is incomplete.
+
+Write your answer here.
+
+- Full document ingestion pipeline (PDF, DOCX, URL, Slack threads, plain text)
+- Natural language Q&A via `/ask` with scoped search (`--personal`, `--team`, `--org`)
+- @mention support in channels and DM support for direct questions
+- Summarization of URLs, ingested documents, and Slack threads via `/summarize`
+- Auto-tagging on upload and category-based browsing via `/browse`
+- Multi-turn conversation memory with `/clear` to reset
+- File upload handling (drag-and-drop PDFs/DOCX into Slack)
+- Out-of-scope detection at both retrieval and LLM levels
+- Rich Slack Block Kit responses with confidence indicators
+
+---
+
+## What is Still in Progress?
+
+Mention what you are still building or planning to improve.
+
+Write your answer here.
+
+- Deploying to a cloud server for 24/7 uptime (currently runs locally via Socket Mode)
+- Adding a web dashboard for KB analytics and document management
+- Persistent conversation memory (currently in-memory, resets on restart)
+- Role-based admin controls for managing org-wide documents
+---
+
+## Screenshots or Demo
+
+Add screenshots, demo video link, or deployed project link if available.
+
+**Deployed Link:**
+**Demo Video Link:**
+**Screenshots:**
+
+---
+
+## Challenges Faced
+
+Mention any challenges you faced while building this project.
+
+Write your answer here.
+
+---
+
+## Learnings
+
+Mention what you learned while building this project.
+
+Write your answer here.
+
+---
+
+## Future Improvements
+
+Mention what you would improve if you had more time.
+
+Write your answer here.
+
+---
+
+## Final Note
+
+Use this space to add anything else you want mentors, judges, or the community to know about your project.
+
+Write your answer here.
